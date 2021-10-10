@@ -75,7 +75,29 @@ easySharing.addEventListener("click", function () {
 /*BURGER*/
 var burgerMenu = document.getElementById('burger-menu');
         var overlay = document.getElementById('menu');
+        var modeImg = document.getElementById("bookmark-imgg");
         burgerMenu.addEventListener('click', function () {
             this.classList.toggle("close");
             overlay.classList.toggle("overlay");
+
+            /*BOOKMARK WHITE*/
+            if (modeImg.src.match("images/logo-bookmark.svg")) {
+            modeImg.src = "images/bookmark-white.svg";
+            modeImg.style.zIndex = "10";
+            }
+            else {
+            modeImg.src = "images/logo-bookmark.svg";
+            }
+            
+            /*SCROLL*/
+            if(document.getElementsByTagName('html')[0].style.overflowY == "hidden"){
+                document.getElementsByTagName('html')[0].style.overflowY = "auto";
+            }
+            else{
+             document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+
+            }
         });
+
+ 
+
